@@ -1,0 +1,66 @@
+kubectl get nodes
+kubectl get pod
+kubectl get services
+kubectl get ....
+
+
+kubectl create -h
+
+
+Pod es lo mas pequeño pero los desplegamos como mencione antes con deployments.
+
+un ejemplo seria 
+kubectl create deployment NOMBRE --image=image [--dry-run] [options]
+
+kubectl create deployment nginx-deployment --image=nginx
+
+kubectl get deployment
+kubectl get pod
+
+kubectl edit deployment nginx-deployment
+kubectl describe deployment nginx-deployment
+
+Debugging
+kubectl logs pod 
+
+kubectl create deployment mongo-depl --image=mongo
+
+kubectl describe pod 
+kubectl exec -it pod -- bin/bash
+
+kubectl delete deployment mongo-depl
+
+
+kubectl apply -f nginx.yaml 
+
+notepad nginx.yaml
+
+kubectl apply -f nginx-deployment.yaml
+kubectl apply -f nginx-servie.yaml
+
+
+kubectl apply -f .\nginx-deployment.yaml
+kubectl apply -f .\nginx-service.yaml
+kubectl get service
+kubectl describe service nginx-service #Vemos las IPS de los pods
+kubectl get pod -o wide #Sacamos las ips de los pods
+kubectl get deployment nginx-deployment -o yaml > file.yaml #Aqui vamos a ver los status y todo lo demas.
+
+
+kubectl delete -f .\nginx-deployment.yaml
+
+
+[root@MXFUTMLAS ~]# echo "username"|base64
+dXNlcm5hbWUK
+[root@MXFUTMLAS ~]# echo "password"|base64
+cGFzc3dvcmQK
+
+
+Desplegamos los ficheros en orden.
+minikube service mongo-express-service
+
+
+
+
+
+
